@@ -1,0 +1,23 @@
+@import "~foundation-sites/scss/foundation";
+
+
+.site-footer {
+  flex: 0 0 auto;
+
+  margin-bottom: rem-calc(52);
+  padding: rem-calc(18 16);
+
+  background-color: rgba(0, 0, 0, 0.18);
+
+  opacity: 0.65;
+
+  font-size: rem-calc(22);
+  line-height: 1.2;
+  color: rgba(#fff, .65);
+  text-align: center;
+
+  a {
+    color: inherit;
+    font-size: rem-calc(30);
+  }
+}

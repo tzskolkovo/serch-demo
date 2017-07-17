@@ -1,0 +1,80 @@
+@import "~foundation-sites/scss/foundation";
+
+.main-menu {
+  margin-top: rem-calc(50);
+
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+
+  .modal-open &{
+    filter: blur(3px);
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+
+    @include show-for(large);
+  }
+
+  li {
+    flex: 0 1 auto;
+  }
+
+  a {
+    display: inline-block;
+    padding: rem-calc(27 10 24);
+
+    font-size: 18px;
+    letter-spacing: .035em;
+    line-height: 1;
+    color: #747474;
+    text-transform: uppercase;
+    transition: background-color .25s ease-out;
+
+    @include breakpoint(large) {
+      font-size: 24px;
+    }
+
+    &:hover {
+      background-color: rgba(#747474, 0.3);
+    }
+
+  }
+
+  .live {
+    position: relative;
+    padding-left: rem-calc(28);
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: rem-calc(3);
+      display: block;
+      width: rem-calc(14);
+      height: rem-calc(14);
+
+      transform: translate3d(0, -50%, 0);
+      content: '';
+
+      border-radius: 50%;
+      background-color: #d0021b;
+    }
+  }
+
+  .home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:  rem-calc(22 22 22 20);
+
+    @include breakpoint(large) {
+      padding:  rem-calc(25 22 22 23);
+
+      font-size: 24px;
+    }
+  }
+}

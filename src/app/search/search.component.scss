@@ -1,0 +1,156 @@
+@import "~foundation-sites/scss/foundation";
+
+.search-bar {
+  position: relative;
+  z-index: 200;
+
+  form {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.66);
+  }
+
+  input, button {
+    height: rem-calc(52);
+  }
+
+  button {
+    flex: 0 0 rem-calc(52);
+    background-image: url(/assets/img/ico-search.svg);
+    background-color: #4c4c4c;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 60%;
+  }
+
+  input {
+    flex: 1 1 auto;
+
+    margin: 0;
+    padding: rem-calc(20 30);
+
+    border: 0;
+    background-color: transparent;
+
+    font-size: rem-calc(30);
+    line-height: 1.5;
+    color: #4c4c4c;
+  }
+
+  @include breakpoint(medium) {
+    button {
+      flex: 0 0 rem-calc(75);
+      background-size: auto;
+    }
+    input, button {
+       height: rem-calc(75);
+     }
+  }
+}
+
+.search-result {
+  position: absolute;
+  z-index: 300;
+  top: 100%;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+
+  background-color: rgba(76, 76, 76, 0.95);
+
+  font-size: rem-calc(22);
+  color: #d7d7d7;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(27);
+  }
+
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    content: '';
+  }
+
+  &__body {
+    position: relative;
+    z-index: 2;
+    overflow-y: auto;
+    padding: rem-calc(16 12);
+
+
+    background-color: rgba(76, 76, 76, 0.95);
+
+    @include breakpoint(medium) {
+      padding: rem-calc(42 40 62);
+    }
+
+    @include breakpoint(large) {
+
+      .cell:nth-child(2) {
+        padding-left: 64px;
+      }
+    }
+  }
+
+  &__section {
+    margin-bottom: rem-calc(46);
+    break-inside: avoid;
+  }
+
+  &__section-heading {
+    font-size: rem-calc(30);
+    color: #9c9c9c;
+  }
+
+  a:not([class]) {
+    color: #77b5d7;
+  }
+
+  a {
+    font-size: inherit;
+    transition: color .4s ease;
+  }
+  a:hover {
+    color: #fff;
+  }
+}
+
+.news-preview {
+  display: block;
+  margin-bottom: .59em;
+
+  line-height: 1.2;
+  color: inherit;
+}
+
+.event-preview {
+  display: block;
+  margin: rem-calc(8 0 30);
+
+  line-height: 1.2;
+  color: inherit;
+
+  small {
+    font-size: rem-calc(18);
+    color: #b3b3b3;
+  }
+
+  .event-date {
+    color: #d7d7d7;
+  }
+}
+
+.service-preview {
+  padding-left: rem-calc(12);
+
+  ul a {
+    color: #d7d7d7;
+  }
+}
+
+i {
+  font-size: rem-calc(20);
+}

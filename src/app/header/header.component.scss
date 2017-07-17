@@ -1,0 +1,76 @@
+@import "~foundation-sites/scss/foundation";
+
+.site-header {
+  flex: 0 0 auto;
+}
+
+.logo {
+  display: block;
+  padding: rem-calc(25 16 25 14+75);
+
+  background-image: url('img/sk-logo.png');
+  background-position: left center;
+  background-repeat: no-repeat;
+  background-size: 75px auto;
+
+  font-size: 0;
+  line-height: 1.2;
+  color: #fff;
+
+  @include breakpoint(medium) {
+    font-size: rem-calc(26);
+  }
+}
+
+.person-info {
+  display: block;
+  max-width: 100%;
+  margin-left: auto;
+  padding: rem-calc(0 12);
+  overflow: hidden;
+  text-align: right;
+
+  @include breakpoint(medium) {
+    padding: rem-calc(30 0 25);
+
+  }
+}
+.person-link {
+  padding-left: rem-calc(28);
+  color: #fff;
+  font-size: rem-calc(20);
+
+  background-image: url("/assets/img/ico-person.svg");
+  background-repeat: no-repeat;
+  background-position: 3px center;
+
+
+}
+
+.person-link,
+.parking-status {
+  display: inline-block;
+  overflow: hidden;
+  max-width:100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height:1;
+  letter-spacing: -.02em;
+}
+
+.parking-status {
+  padding-left: rem-calc(26);
+
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  //font-family: ". Apple System UI Font";
+  font-size: rem-calc(14);
+  line-height: 1;
+  color: #45d250;
+
+  &--warning  {
+    color: #d23333;
+
+    background-image: url("/assets/img/ico-warning.svg");
+  }
+}

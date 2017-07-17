@@ -1,0 +1,28 @@
+@import "~foundation-sites/scss/foundation";
+
+.news-list {
+  margin-bottom: rem-calc(34);
+  padding: rem-calc(12 18);
+
+  background-color: #ffffff;
+
+  &__heading {
+    margin-bottom: .8em;
+
+    font-size: 1rem;
+    color: #4b4a4a;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 1em;
+
+    font-size: rem-calc(14);
+    line-height: 1.2;
+    color: inherit;
+
+    &:hover {
+      color: #2e7396;
+    }
+  }
+}

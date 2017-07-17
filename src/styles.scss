@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~foundation-sites/scss/foundation";
+@import "assets/fonts/fonts";
+@import "settings";
+
+@include foundation-everything();
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(180deg, rgba(213, 213, 213, 0.66) 0%, rgba(123, 123, 123, 0.66) 100%), linear-gradient(180deg, #c2ff00 0%, #34ff0a 100%);
+  background-repeat: no-repeat;
+
+  font-family: 'sfns_display';
+}
+
+.main-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; align-content: center;
+
+  > * {
+    width: 100%;
+  }
+
+}
+
+.main-content {
+  position: relative;
+  display: flex;
+  flex: 1 0 auto;
+  flex-wrap: wrap;
+  padding: rem-calc(15);
+
+  background-color: rgba(255, 255, 255, 0.49);
+
+  .modal-open &{
+    filter: blur(5px);
+  }
+}
+
+main, aside {
+  flex: 0 0 100%;
+}
+
+@include breakpoint(xlarge) {
+  main {
+    flex: 1 1 rem-calc(808);
+  }
+
+  aside {
+    flex: 1 1 rem-calc(345);
+    margin-left: rem-calc(15);
+  }
+}
+
+.is-open ~ * {
+  filter: blur(7px);
+}
+
+nav {
+  ul, ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.ico-service {
+  display: inline-block;
+  width: rem-calc(26);
+  height: rem-calc(26);
+  background-image: url('/assets/img/q.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translate(0, 3px);
+}
+.ico-email {
+  display: inline-block;
+  width: rem-calc(23);
+  height: rem-calc(18);
+  background-image: url('/assets/img/mail.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.main-menu {
+  .modal-open & {
+    filter: blur(5px);
+  }
+}

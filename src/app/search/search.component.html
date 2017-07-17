@@ -1,0 +1,56 @@
+<div class="search-bar">
+    <form action="" novalidate #searchForm>
+        <button type='submit' (click)='searchTerm$.next(search.value)'></button>
+        <input type="text" placeholder='Поиск' #search (keyup)="searchTerm$.next($event.target.value)">
+    </form>
+    <div class="search-result" *ngIf='showResults'>
+        <div class="search-result__body">
+            <div class="grid-x grid-padding-x">
+                <div class="cell small-12 large-6">
+                    <div class="search-result__section" *ngIf='results.map'>
+                        <div class="search-result__section-heading">Паркинг на карте:</div>
+                        <img src="{{results.map}}" alt="">
+                    </div>
+                    <div class="search-result__section" *ngIf='results.service'>
+                        <div class="search-result__section-heading"><i class="ico-service"></i> Сервисы:</div>
+                        <nav class='service-preview'>
+                            <ul>
+                                <li *ngFor='let service of results.service'>
+                                    <a href="{{service.link}}">⟩ {{service.title}}</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="search-result__section" *ngIf='results.feedback'>
+                        <div class="search-result__section-heading">Обратная связь:</div>
+                        <a href="{{feedback.link}}" *ngFor='let feedback of results.feedback'>{{feedback.title}}</a>
+                    </div>
+                    <div class="search-result__section" *ngIf='results.contacts'>
+                        <div class="search-result__section-heading">Контакты по теме “Паркинг”:</div>
+                        <div *ngFor='let contacts of results.contacts'>
+                            <div *ngIf='contacts.tel'>
+                                <i class="icon-phone"></i>{{contacts.tel}}
+                            </div>
+                            <a *ngIf='contacts.email' href="mailto:{{contacts.email}}"><i class="ico-email"></i> {{contacts.email}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cell small-12 large-6">
+                    <div class="search-result__section" *ngIf='results.news'>
+                        <div class="search-result__section-heading">Новости:</div>
+                        <a href="{{news.link}}" class='news-preview' *ngFor='let news of results.news'><span class="date">{{news.pubdate}}</span> {{news.title}}</a>
+                    </div>
+                    <div class="search-result__section" *ngIf='results.events'>
+                        <div class="search-result__section-heading"> События:</div>
+                        <a href="{{event.link}}" class='event-preview' *ngFor='let event of results.events'>
+                            <span class='event-date'>{{event.date}}</span>  <small>{{event.last}}</small>
+                            <br>
+                            {{event.title}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
